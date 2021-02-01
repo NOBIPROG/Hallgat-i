@@ -1,0 +1,90 @@
+<div class="container">
+  <app-header buttonClass="btn-success" buttonTitle="Hozzáadás" title="Hallgatói nyilvántartás"></app-header>
+</div>
+<div class="container-md">
+  <table class="table table-striped table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">Név</th>
+      <th scope="col">E-mail cím</th>
+      <th scope="col">Életkor</th>
+      <th scope="col">Nem</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+    <tr app-student-row *ngFor="let s of students2" [student]="s" (delete)="delete(s)">
+
+    </tr>
+    </tbody>
+  </table>
+</div>
+<!-- Modal delete -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Megerősítés</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Biztosan törölni akarod a tanulót?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
+        <button type="button" class="btn btn-danger " id="delete" data-bs-dismiss="modal">Töröl</button>
+      </div>
+    </div>
+  </div>
+</div>
+​
+<!-- Modal change/new -->
+<div class="modal fade" id="changeModal" tabindex="-1" aria-labelledby="changeModalLabel change1ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm"><h5 class="modal-title" id="changeModalLabel">Tanuló hozzáadása</h5></div>
+            <div class="col-sm"><h5 class="modal-title" id="change1ModalLabel">Tanuló Szerkesztése</h5></div>
+          </div>
+        </div>
+        ​
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body addModal">
+        <div class="mb-3">
+          <label for="formControl-name" class="form-label">Név</label>
+          <input type="text" class="form-control" id="formControl-name">
+          <div class="invalid-feedback">A név kitöltése kötelező!</div>
+        </div>
+        <div class="mb-3">
+          <label for="formControl-email" class="form-label">E-mail cím </label>
+          <input type="email" class="form-control" id="formControl-email">
+          <div class="invalid-feedback">Valós e-mail címet adj meg!</div>
+        </div>
+        <div class="mb-3">
+          <label for="formControl-birth-year" class="form-label">Életkor</label>
+          <input type="text" class="form-control" id="formControl-birth-year">
+          <div class="invalid-feedback"></div>
+        </div>
+        <label for="genderFormControlInput1" class="form-label">Nem</label>
+        <select class="form-select" aria-label="Default select example" id="genderFormControlInput1">
+          <option value="Nő" selected>Nő</option>
+          <option value="Férfi">Férfi</option>
+          ​
+          ​
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
+        ​
+        <button type="button" class="btn btn-primary" id="saveChange">Mentés</button>
+        <button type="submit" class="btn btn-success" id="addNewStudent" data-bs-dismiss="modal">Hozzáadás</button>
+        ​
+      </div>
+    </div>
+  </div>
+</div>
+

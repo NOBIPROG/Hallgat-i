@@ -8,13 +8,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { StudentRowComponent } from './components/student-row/student-row.component';
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
+import { AddStudentComponent } from './components/add-student/add-student.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentListComponent,
     HeaderComponent,
-    StudentRowComponent
+    StudentRowComponent,
+    AddStudentComponent
   ],
   imports: [
     BrowserModule,
