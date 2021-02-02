@@ -13,10 +13,16 @@ export class StudentService {
 
   constructor(private http: HttpClient) {
   }
-  getStudents(): Observable<Student[]>{
+
+  getStudents(): Observable<Student[]> {
     return this.http.get<StudentResponse>(this.SERVER_URL, {withCredentials: true}).pipe(map(response => response.students));
   }
+
   deleteStudent(s: Student): Observable<StudentResponse> {
     return this.http.delete<StudentResponse>(this.SERVER_URL + '?id=' + s.id, {withCredentials: true});
+  }
+
+  addStudent(s: Student): Observable<StudentResponse> {
+    return this.http.post<StudentResponse>(this.SERVER_URL, {student: s}, {withCredentials: true});
   }
 }
