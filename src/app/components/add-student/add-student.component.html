@@ -1,6 +1,6 @@
 <div class="container">
   <app-header title="Hallgató hozzáadása" buttonClass="btn-secondary" buttonTitle="Vissza"
-              routerLink="/students"></app-header>
+              buttonLink="/students"></app-header>
   <div class="mb-3">
     <label for="formControl-name" class="form-label">Név</label>
     <input type="text" class="form-control" id="formControl-name" [(ngModel)]="s.name" [ngClass]="{'is-invalid': !validName}">
@@ -17,7 +17,7 @@
     <div class="invalid-feedback">Nem jó életkor</div>
   </div>
   <label for="genderFormControlInput1" class="form-label">Nem</label>
-  <select class="form-select" aria-label="Default select example" id="genderFormControlInput1" [(ngModel)]="s.gender">
+  <select class="form-control" aria-label="Default select example" id="genderFormControlInput1" [(ngModel)]="s.gender">
     <option value="FEMALE" selected>Nő</option>
     <option value="MALE ">Férfi</option>
   </select>

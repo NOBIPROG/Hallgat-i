@@ -23,7 +23,7 @@ export class StudentRowComponent implements OnInit {
 
   ngOnInit(): void {
   }
-deleteEvent(): void {
-   this.delete.emit();
-}
+  deleteEvent(): void {
+     this.delete.emit();
+  }
 }
