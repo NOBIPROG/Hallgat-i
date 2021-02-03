@@ -9,8 +9,10 @@ import { StudentRowComponent } from './components/student-row/student-row.compon
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import { AddStudentComponent } from './components/add-student/add-student.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModifyModalComponent } from './components/modify-modal/modify-modal.component';
+import { GenderPipe } from './pipes/gender.pipe';
 
 @NgModule({
   declarations: [
@@ -18,14 +20,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     StudentListComponent,
     HeaderComponent,
     StudentRowComponent,
-    AddStudentComponent
+    AddStudentComponent,
+    ModifyModalComponent,
+    GenderPipe
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

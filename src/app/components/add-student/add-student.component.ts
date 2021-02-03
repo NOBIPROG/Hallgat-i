@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Student} from '../../interfaces/student';
 import {StudentService} from '../../services/student.service';
 import {Router} from '@angular/router';
+import {Gender} from '../../enum/gender.enum';
 
 @Component({
   selector: 'app-add-student',
@@ -20,7 +21,7 @@ export class AddStudentComponent implements OnInit {
       name: '',
       email: '',
       age: null,
-      gender: ''
+      gender: Gender.FEMALE,
     };
     this.validAge = true;
     this.validEmail = true;

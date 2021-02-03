@@ -1,5 +1,7 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {Student} from '../../interfaces/student';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {ModifyModalComponent} from '../modify-modal/modify-modal.component';
 
 
 
@@ -18,12 +20,16 @@ export class StudentRowComponent implements OnInit {
   delete = new EventEmitter<void>();
 
 
-  constructor() {
+  constructor(private modalService: NgbModal) {
   }
 
   ngOnInit(): void {
   }
   deleteEvent(): void {
      this.delete.emit();
+  }
+  openModifyModal(): void {
+    const modalRef = this.modalService.open(ModifyModalComponent);
+    modalRef.componentInstance.student = this.student;
   }
 }
