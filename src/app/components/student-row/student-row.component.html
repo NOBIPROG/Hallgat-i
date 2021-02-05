@@ -2,11 +2,14 @@
 <td>{{student.email}}</td>
 <td>{{student.age}}</td>
 <td>{{student.gender | gender}}</td>
+<td *ngIf="student.books.length !=0"><a routerLink="/students/{{student.id}}/books">{{student.books.length}}</a></td>
+<td *ngIf="student.books.length ==0">Nincs</td>
+
 <td>
-  <button type="button" class="btn btn-warning" (click)="openModifyModal()" >
+  <button type="button" class="btn btn-warning" (click)="openModifyModal()">
     Módosít
   </button>
-  <button type="button" class="btn btn-danger"  (click)="deleteEvent()">
+  <button type="button" class="btn btn-danger" (click)="deleteEvent()">
     Töröl
   </button>
 </td>

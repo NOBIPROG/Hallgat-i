@@ -1,4 +1,5 @@
 import {Gender} from '../enum/gender.enum';
+import {Book} from './book';
 
 export interface Student {
   id?: number;
@@ -6,4 +7,5 @@ export interface Student {
   email: string;
   age: number;
   gender: Gender;
+  books: Book[];
 }

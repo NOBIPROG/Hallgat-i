@@ -2,6 +2,7 @@ import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {Student} from '../../interfaces/student';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {ModifyModalComponent} from '../modify-modal/modify-modal.component';
+import {Router} from '@angular/router';
 
 
 
@@ -20,7 +21,7 @@ export class StudentRowComponent implements OnInit {
   delete = new EventEmitter<void>();
 
 
-  constructor(private modalService: NgbModal) {
+  constructor(private modalService: NgbModal, router: Router) {
   }
 
   ngOnInit(): void {

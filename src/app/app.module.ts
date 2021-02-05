@@ -13,6 +13,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModifyModalComponent } from './components/modify-modal/modify-modal.component';
 import { GenderPipe } from './pipes/gender.pipe';
+import { SearchPipe } from './pipes/search.pipe';
+import { BooksComponent } from './components/books/books.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { GenderPipe } from './pipes/gender.pipe';
     StudentRowComponent,
     AddStudentComponent,
     ModifyModalComponent,
-    GenderPipe
+    GenderPipe,
+    SearchPipe,
+    BooksComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,6 @@ export class HeaderComponent implements OnInit {
   buttonTitle: string;
   @Input()
   buttonLink: string;
-
   constructor() {
   }
 

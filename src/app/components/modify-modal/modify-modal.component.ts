@@ -14,6 +14,7 @@ export class ModifyModalComponent implements OnInit {
   student: Student;
   studentForm: FormGroup;
   s: Student[];
+
   constructor(public activeModal: NgbActiveModal, private studentService: StudentService) {
     this.s = [];
     // this.name = this.student.name;
@@ -46,18 +47,15 @@ export class ModifyModalComponent implements OnInit {
   onSubmit(): boolean {
     if (this.studentForm.valid) {
       this.studentService.modifyStudent(this.student.id, this.studentForm.value).subscribe(resp => {
-        this.s = resp.students;
+        this.studentService.refreshStudents(resp.students);
+        this.activeModal.close();
       });
-      this.activeModal.close();
-      this.studentService.getStudents().subscribe(() => {});
     } else {
       return false;
     }
   }
 
-  refresh(): void {
-    window.location.reload();
-  }
+
 }
 
 

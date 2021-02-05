@@ -18,10 +18,11 @@ export class AddStudentComponent implements OnInit {
 
   constructor(private studentService: StudentService, private router: Router) {
     this.s = {
+      books: [],
       name: '',
       email: '',
       age: null,
-      gender: Gender.FEMALE,
+      gender: Gender.FEMALE
     };
     this.validAge = true;
     this.validEmail = true;
