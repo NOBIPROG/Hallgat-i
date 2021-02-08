@@ -1,0 +1,22 @@
+<div class="container">
+<app-header  title="{{student?.name}} könyvei" buttonClass="btn-secondary" buttonTitle="Vissza"
+            buttonLink="/students"></app-header>
+<table class="table table-striped table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">Cím</th>
+    <th scope="col">Író</th>
+    <th scope="col">Alcím</th>
+    <th scope="col">Weboldal</th>
+  </tr>
+  </thead>
+  <tbody id="tbody">
+  <tr  *ngFor="let book of student?.books" >
+    <td>{{book.title}}</td>
+    <td>{{book.author}}</td>
+    <td>{{book.subtitle}}</td>
+    <td><a [href]="book.website" target="_blank">{{book.website}}</a></td>
+  </tr>
+  </tbody>
+</table>
+</div>

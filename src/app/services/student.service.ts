@@ -42,7 +42,8 @@ export class StudentService {
   get refreshObservable(): Observable<Student[]> {
     return this.studentSubject.asObservable();
   }
-  currentStudent(s: number): Observable<StudentResponse>  {
-    return this.http.get<StudentResponse>(this.SERVER_URL + '?id=' + s, {withCredentials: true});
+  currentStudent(s: number): Observable<Student>  {
+    return this.http.get<StudentResponse>(this.SERVER_URL + '?id=' + s, {withCredentials: true})
+      .pipe(map(response => response.students[0]));
   }
 }

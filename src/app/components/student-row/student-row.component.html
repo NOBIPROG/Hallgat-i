@@ -2,7 +2,7 @@
 <td>{{student.email}}</td>
 <td>{{student.age}}</td>
 <td>{{student.gender | gender}}</td>
-<td *ngIf="student.books.length !=0"><a routerLink="/students/{{student.id}}/books">{{student.books.length}}</a></td>
+<td *ngIf="student.books.length !=0"><a routerLink="/student/{{student.id}}/books">{{student.books.length}}</a></td>
 <td *ngIf="student.books.length ==0">Nincs</td>
 
 <td>
